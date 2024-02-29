@@ -1,0 +1,26 @@
+package practical;
+
+public class Exp1 {
+static int x=22;
+	public static void display() {
+		int x=44;
+		System.out.println("This is a static method "+x);
+	}
+	public  void display2() {
+		int x=44;
+		System.out.println("This is a non-static method "+x);
+	}
+	public static void main(String[] args) {
+		Exp1 obj2=new Exp1();   //creating object of z
+		 
+		System.out.println(x);  //static variable
+		Exp1.display();         // static method
+		obj2.display2();        //non static method accessed by creating object
+
+	}
+
+}
+Output:
+22
+This is a static method 44.
+This is a non-static method 44.
