@@ -1,0 +1,47 @@
+package practical;
+import java.util.Scanner;
+
+public class Calculator {
+ static int option,result;
+ 
+	public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);	
+	
+	System.out.println("Enter no 1");
+	int no1=sc.nextInt();
+	System.out.println("Enter no 2");
+	int no2=sc.nextInt();
+	System.out.println("Enter your option");
+	System.out.println("options are 1:+ , 2:- , 3:* , 4:/");
+	int option=sc.nextInt();
+	
+	switch(option) {
+	case 1:result=no1+no2;
+	break;
+	case 2:result=no1-no2;
+	break;
+	case 3:result=no1*no2;
+	break;
+	case 4:result=no1/no2;
+	break;
+	default:
+		System.out.println("invalid");
+	}
+	System.out.println("result is "+result);
+	}
+}
+Output:
+Enter no. 1
+20
+Enter no. 2
+10
+Enter your choice
+Options are 1:+, 2:-, 3:*, 4:/
+1
+Result is 30
+2
+Result is 10
+3
+Result is 200
+4
+Result is 2.
