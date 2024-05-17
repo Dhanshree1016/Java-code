@@ -1,0 +1,26 @@
+package dhanshree;
+
+public class Exp7 {
+
+	public static void main(String[] args) {
+      int x=20;
+      int m[]= {10,20};
+	
+	try {
+		int y=x/10;
+		m[23]=33;
+	}
+	catch(ArrayIndexOutOfBoundsException obj) {
+		System.out.println("Array index out of bounds exception occurs");
+	}
+	finally {
+		System.out.println("Finally block always executes");
+	}
+    System.out.println("dhanshree");
+}
+}
+
+Output is:
+Array index out of bounds exception occurs
+Finally block always executes
+dhanshree
