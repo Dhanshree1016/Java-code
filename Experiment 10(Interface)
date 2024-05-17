@@ -1,4 +1,5 @@
 package dhanshree;
+import java.util.Scanner;
  interface Shape{
 	 double pi=3.14;
 	 public void getArea(int a);
@@ -15,11 +16,15 @@ package dhanshree;
 public class exp10 {
 
 	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter radius");
       Shape C1=new circle();
-      C1.getArea(5);
+      C1.getArea(sc.nextInt());
 	}
 
 }
 
 Output is:
+Enter radius
+5
 Area is 78.5
