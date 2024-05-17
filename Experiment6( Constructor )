@@ -1,0 +1,40 @@
+package dhanshree;
+
+public class exp6 {
+	exp6(){
+		this(77);
+		System.out.println("This is default");
+	}
+	exp6(int a) {
+		this(11, 22);
+		System.out.println("1 parameter con " + a);
+	}
+	
+	exp6(int a, int b) {
+		this("sres");
+		System.out.println("2 parameter con " + a + " , " + b);
+	}
+	
+	exp6(String str) {
+		System.out.println("1 string " + str);
+	}
+
+	public static void main(String[] args) {
+		exp6 obj=new exp6();
+		exp6 ob = new exp6(11);
+		exp6 ob1 = new exp6(11, 22);
+		exp6 ob3 = new exp6("Dhanshreee");
+	}
+}
+
+Output is:
+1 string sres
+2 parameter con 11 , 22
+1 parameter con 77
+This is default
+1 string sres
+2 parameter con 11 , 22
+1 parameter con 11
+1 string sres
+2 parameter con 11 , 22
+1 string Dhanshreee
