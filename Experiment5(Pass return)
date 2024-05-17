@@ -1,0 +1,43 @@
+package dhanshree;
+
+public class Exp5 {
+
+		int a,b;
+		
+		Exp5(int x, int y){
+			a=x;
+			b=y;
+		}
+		
+		
+		public boolean compare(Exp5 ob) {
+			return (ob.a==a && ob.b==b);
+			
+		}
+
+		public static void main(String[] args) {
+			Exp5 ob1=new Exp5(10, 20);//object creation and constr call
+			//System.out.println(ob1.a+ " "+ob1.b);
+			Exp5 ob2=new Exp5(11, 22);
+			
+			System.out.println(ob1.compare(ob2));
+			
+			
+			Exp5 ob5=ob2.incrementbyTen();
+			System.out.println(ob5.a+ " "+ob5.b);
+			System.out.println(ob1.a+ " "+ob1.b);
+
+		}
+
+
+		private Exp5 incrementbyTen() {
+			Exp5 temp=new Exp5(a+10,b+10);
+			return temp;
+		}
+
+	}
+
+Output is:
+false
+21 32
+10 20
