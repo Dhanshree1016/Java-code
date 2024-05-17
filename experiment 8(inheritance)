@@ -1,0 +1,41 @@
+package dhanshree;
+
+class parent{
+	public void car() {
+		System.out.println("Car...p");
+	}
+}
+class child extends parent{
+	public void bike() {
+		System.out.println("Bike...c");
+	}
+}
+class grandchild extends child{
+	public void cycle() {
+		System.out.println("Cycle...g");
+	}
+}
+
+public class Inheritance {
+
+	public static void main(String[] args) {
+		grandchild obj=new grandchild();
+		obj.cycle();
+		obj.car();
+		obj.bike();
+		child obj1=new child();
+		obj1.bike();
+		obj1.car();
+		parent obj2=new parent();
+		obj2.car();
+	}
+
+}
+
+Output is:
+Cycle...g
+Car...p
+Bike...c
+Bike...c
+Car...p
+Car...p
