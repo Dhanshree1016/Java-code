@@ -1,0 +1,96 @@
+package com.Servletpkg;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class  
+ */
+public class Myclass extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		int i=Integer.parseInt(request.getParameter("number1"));
+		int j=Integer.parseInt(request.getParameter("number2"));
+		int k=i+j;
+		
+		PrintWriter out=response.getWriter();
+		out.println("result is "+k);
+		//System.out.println("answer is"+k);
+	}
+
+}
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="add.jsp" method="get">//default is get
+first number: <input type="text" name="n1">
+second number: <input type="text" name="n2">
+<input type="submit">
+
+</form>
+</body>
+</html>
+
+
+
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body bgcolor="yellow">
+<%
+int i=Integer.parseInt(request.getParameter("n1"));
+int j=Integer.parseInt(request.getParameter("n2"));
+int k=i+j;
+out.print("Result is "+k);
+%>
+
+</body>
+</html>
+
+
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  
+  <servlet> 
+  <servlet-name> xyz</servlet-name>
+  <servlet-class>com.Servletpkg.Myclass</servlet-class>
+   </servlet>
+  
+  <servlet-mapping>
+  <servlet-name> xyz</servlet-name>
+  <url-pattern>/add</url-pattern>
+  
+  
+  </servlet-mapping>
+  
+  
+</web-app>
