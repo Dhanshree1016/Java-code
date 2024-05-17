@@ -1,0 +1,30 @@
+package dhanshree;
+import java.sql.*;
+
+public class Ex11sample {
+	public static void main(String[] args) throws Exception {
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "root", "Root@123");
+PreparedStatement ps=con.prepareStatement("insert into employee (name,password) values(?,?)");
+ps.setString(1,"yogesh");
+ps.setString(2,"12345");
+int i=ps.executeUpdate();
+System.out.println("data inserted....");
+
+
+PreparedStatement ps1=con.prepareStatement("select * from employee");
+ResultSet rs=ps1.executeQuery();
+while(rs.next()) {
+	System.out.println("uname"+rs.getString(1));
+	System.out.println("pwd"+rs.getString(2));
+}
+con.close();
+ps.close();
+	}
+
+}
+
+Output is:
+data inserted....
+unameyogesh
+pwd12345
