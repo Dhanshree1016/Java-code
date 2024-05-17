@@ -1,0 +1,28 @@
+package dhanshree;
+abstract class Exp9{
+	abstract void method();
+	void method2() {
+		System.out.println("Method 2");
+	}
+}
+class Exp9_child extends Exp9{
+
+	@Override
+	void method() {
+		System.out.println("Abstract Method of class Exp9");
+	}
+	
+}
+public class Abstraction {
+
+	public static void main(String[] args) {
+      Exp9_child obj=new Exp9_child();
+      obj.method();
+      obj.method2();
+	}
+
+}
+
+Output is:
+Abstract Method of class Exp9
+Method 2
