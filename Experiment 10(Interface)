@@ -1,0 +1,25 @@
+package dhanshree;
+ interface Shape{
+	 double pi=3.14;
+	 public void getArea(int a);
+ }
+ class circle implements Shape{
+
+	@Override
+	public void getArea(int r) {
+       		double area=pi*r*r;
+       		System.out.println("Area is " +area);
+	}
+	 
+ }
+public class exp10 {
+
+	public static void main(String[] args) {
+      Shape C1=new circle();
+      C1.getArea(5);
+	}
+
+}
+
+Output is:
+Area is 78.5
